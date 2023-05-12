@@ -15,19 +15,18 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('Posts');
+    return view('Posts', [
+
+        'Posts'=> Post::all()
+    ]);
 });
 
 Route::get('Posts/{post}',function($va){
 
     $post = Post::find($va);
+    return view('Post', [
 
-    // if (! file_exists($path= __DIR__."/../resources/posts/{$va}.html")){
-    //     return redirect('/');
-    // }
-    // $post = cache () ->remember("Posts.{$va}", 1200, fn() => file_get_contents($path));
-
-    return view('Post',[
         'post'=> $post,
     ]);
+
 })-> where('post', '[A-z_\-]+');
