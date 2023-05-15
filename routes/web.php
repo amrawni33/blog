@@ -15,18 +15,16 @@ use App\Models\Post;
 */
 
 Route::get('/', function () {
-    return view('Posts', [
-
-        'Posts'=> Post::all()
+    return view('posts', [
+        'posts'=> Post::all()
     ]);
 });
 
-Route::get('Posts/{post}',function($va){
+Route::get('posts/{post}',function($post){
 
-    $post = Post::find($va);
-    return view('Post', [
-
-        'post'=> $post,
-    ]);
+    $post = post::find($post);
+    return view('post', [
+        'post'=> $post
+    ] );
 
 })-> where('post', '[A-z_\-]+');

@@ -8,9 +8,9 @@
     <title>My Blog</title>
 </head>
 <body>
-        <?php foreach ($Posts as $Post) :?>
+        <?php foreach ($posts as $post) :?>
             <article>
-                <?= $Post; ?>
+                <?= $post; ?>
             </article>
         <?php endforeach; ?>
 </body>
