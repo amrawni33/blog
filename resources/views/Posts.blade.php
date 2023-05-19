@@ -8,13 +8,13 @@
     <title>My Blog</title>
 </head>
 <body>
-        <?php foreach ($posts as $post) :?>
+        @foreach ($posts as $post):
             <article>
-                <a href="/posts/<?= $post->slug ?>"><h1><?=  $post->title ?></h1></a>
+                <a href="/posts/{{ $post->slug }}"><h1>{{$post->title}}</h1></a>
                 <div>
-                    <?= $post->excerpt ?>
+                    {{$post->excerpt}}
                 </div>
             </article>
-        <?php endforeach; ?>
+        @endforeach; 
 </body>
 </html>
